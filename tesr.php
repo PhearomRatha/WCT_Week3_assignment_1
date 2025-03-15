@@ -12,9 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['fields'] = "All fields are required.";
     }
 
-    if ($password != $confirm_password) {
-        $errors['password'] = "Passwords do not match.";
-    }
+ 
 
     if (empty($errors)) {
         echo "<h2>Form Submitted Successfully!</h2>";
