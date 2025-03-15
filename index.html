@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-gray-700">Create an Account</h2>
+        <form action="tesr.php" method="POST" class="space-y-4" id="registrationForm">
+            <div>
+                <label class="block text-sm font-medium text-gray-600" for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                    class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
+                    placeholder="John Doe" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-600" for="email">Email</label>
+                <input type="email" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
+                    placeholder="john@example.com" id="email" name="email" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-600" for="password">Password</label>
+                <div class="relative">
+                    <input type="password" id="password" name="password"
+                        class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
+                        placeholder="********" required>
+                    <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <!-- Closed eye icon -->
+                        <svg id="passwordIconClosed" class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 11V7a1 1 0 0 0-1-1h-2V4a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H6a1 1 0 0 0-1 1v4M12 5a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" />
+                        </svg>
+                        <!-- Open eye icon -->
+                        <svg id="passwordIconOpen" class="w-5 h-5 text-gray-600 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16.5 12a4.5 4.5 0 0 0-9 0c0 2.484 2.016 4.5 4.5 4.5s4.5-2.016 4.5-4.5zM12 5a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-600" for="confirmPassword">Confirm Password</label>
+                <div class="relative">
+                    <input type="password" id="confirmPassword" name="confirm_password"
+                        class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
+                        placeholder="********" required>
+                    <button type="button" id="toggleConfirmPassword"
+                        class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <!-- Closed eye icon -->
+                        <svg id="confirmPasswordIconClosed" class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 11V7a1 1 0 0 0-1-1h-2V4a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H6a1 1 0 0 0-1 1v4M12 5a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" />
+                        </svg>
+                        <!-- Open eye icon -->
+                        <svg id="confirmPasswordIconOpen" class="w-5 h-5 text-gray-600 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16.5 12a4.5 4.5 0 0 0-9 0c0 2.484 2.016 4.5 4.5 4.5s4.5-2.016 4.5-4.5zM12 5a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <button type="submit"
+                class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600">Register</button>
+        </form>
+        <p class="text-sm text-center text-gray-600">Already have an account? <a href="#"
+                class="text-blue-500 hover:underline">Sign in</a></p>
+    </div>
+</body>
+
+<script>
+    const form = document.getElementById('registrationForm');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordIconClosed = document.getElementById('passwordIconClosed');
+    const passwordIconOpen = document.getElementById('passwordIconOpen');
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    const confirmPasswordIconClosed = document.getElementById('confirmPasswordIconClosed');
+    const confirmPasswordIconOpen = document.getElementById('confirmPasswordIconOpen');
+
+    togglePassword.addEventListener('click', function() {
+        const type = password.type === 'password' ? 'text' : 'password';
+        password.type = type;
+        passwordIconClosed.classList.toggle('hidden');
+        passwordIconOpen.classList.toggle('hidden');
+    });
+
+    toggleConfirmPassword.addEventListener('click', function() {
+        const type = confirmPassword.type === 'password' ? 'text' : 'password';
+        confirmPassword.type = type;
+        confirmPasswordIconClosed.classList.toggle('hidden');
+        confirmPasswordIconOpen.classList.toggle('hidden');
+    });
+
+    form.addEventListener('submit', function(event) {
+        let valid = true;
+        let errorMessages = [];
+
+        if (name.value === "") {
+            errorMessages.push('Name is required');
+            valid = false;
+        }
+
+        if (email.value === "") {
+            errorMessages.push('Email is required');
+            valid = false;
+        } else if (!email.value.includes('@')) {
+            errorMessages.push('Email is not valid');
+            valid = false;
+        }
+
+        if (password.value === "") {
+            errorMessages.push('Password is required');
+            valid = false;
+        }
+
+        if (confirmPassword.value === "") {
+            errorMessages.push('Confirm password is required');
+            valid = false;
+        } else if (confirmPassword.value !== password.value) {
+            errorMessages.push('Passwords do not match');
+            valid = false;
+        }
+
+        if (!valid) {
+            event.preventDefault();
+            alert(errorMessages.join('\n'));
+        }
+    });
+</script>
+
+</html>
